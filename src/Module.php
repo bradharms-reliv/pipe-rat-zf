@@ -1,6 +1,6 @@
 <?php
 
-namespace Reliv\RcmApiLib;
+namespace Reliv\PipeRatZf;
 
 /**
  * Class Module

@@ -4,31 +4,44 @@ return [
     'Reliv\\PipeRat' => require __DIR__ . '/../../pipe-rat/config/config.php',
     'service_manager' => [
         'config_factories' => [
+            
+            /* Extractors */
+            'Reliv\PipeRat\Extractor\CollectionPropertyGetterExtractor' => [],
+            'Reliv\PipeRat\Extractor\PropertyGetterExtractor'=> [],
+
             /* Resource Controller */
             'Reliv\PipeRat\ResourceController\DoctrineResourceController' => [
                 'arguments' => [
                     'Doctrine\ORM\EntityManager',
                 ],
             ],
+
+            /* Hydrators */
+            'Reliv\PipeRat\Hydrator\PropertySetterHydrator' => [],
+
             /* Resource Middleware */
             // ACL
             'Reliv\PipeRat\Middleware\Acl\RcmUserAcl' => [
+                'arguments' => [
+                    'RcmUser\Service\RcmUserService',
+                ],
             ],
+            // Extractor
+            'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyExtractor' => [],
+            'Reliv\PipeRat\Middleware\Extractor\PropertyGetterExtractor' => [],
             // InputFilter
-            'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterClass' => [
-            ],
-            'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterConfig' => [
-            ],
+            'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterClass' => [],
+            'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterConfig' => [],
             'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterService' => [
+                'arguments' => [
+                    'ServiceManager',
+                ],
             ],
             // Request Formatter
-            'Reliv\PipeRat\Middleware\RequestFormat\JsonRequestFormat' => [
-            ],
+            'Reliv\PipeRat\Middleware\RequestFormat\JsonRequestFormat' => [],
             // Response Formatter
-            'Reliv\PipeRat\Middleware\ResponseFormat\JsonResponseFormat' => [
-            ],
-            'Reliv\PipeRat\Middleware\ResponseFormat\XmlResponseFormat' => [
-            ],
+            'Reliv\PipeRat\Middleware\ResponseFormat\JsonResponseFormat' => [],
+            'Reliv\PipeRat\Middleware\ResponseFormat\XmlResponseFormat' => [],
             // Main
             'Reliv\PipeRat\Middleware\MainMiddleware' => [
                 'class' => 'Reliv\PipeRat\Middleware\MainMiddleware',
@@ -48,6 +61,7 @@ return [
             ],
             'Reliv\PipeRat\Middleware\Error\TriggerErrorHandler' => [],
             'Reliv\PipeRat\Middleware\Error\NonThrowingErrorHandler' => [],
+
             /* Model Providers */
             'Reliv\PipeRat\Provider\ErrorModelProvider' => [
                 'class' => 'Reliv\PipeRat\Provider\ConfigErrorModelProvider',

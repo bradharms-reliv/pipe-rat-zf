@@ -1,13 +1,11 @@
 <?php
 /* */
 return [
-    'Reliv\PipeRat' => [
-        'resource' => require __DIR__ . '../../pipe-rat/config/config.php',
-    ],
+    'Reliv\\PipeRat' => require __DIR__ . '/../../pipe-rat/config/config.php',
     'service_manager' => [
         'config_factories' => [
             /* Resource Controller */
-            'Reliv\PipeRat\Controller\DoctrineResourceController' => [
+            'Reliv\PipeRat\ResourceController\DoctrineResourceController' => [
                 'arguments' => [
                     'Doctrine\ORM\EntityManager',
                 ],
@@ -59,14 +57,14 @@ return [
                 ],
             ],
             'Reliv\PipeRat\Provider\ResourceModelProvider' => [
-                'class' => 'Reliv\PipeRat\PipeRat\ConfigResourceModelProvider',
+                'class' => 'Reliv\PipeRat\Provider\ConfigResourceModelProvider',
                 'arguments' => [
                     'Config',
                     'ServiceManager',
                 ],
             ],
             'Reliv\PipeRat\Provider\RouteModelProvider' => [
-                'class' => 'Reliv\PipeRat\PipeRat\ConfigRouteModelProvider',
+                'class' => 'Reliv\PipeRat\Provider\ConfigRouteModelProvider',
                 'arguments' => [
                     'Config',
                     'ServiceManager',

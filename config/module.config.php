@@ -28,7 +28,7 @@ return [
                 ],
             ],
             // Extractor
-            'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyExtractor' => [],
+            'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyGetterExtractor' => [],
             'Reliv\PipeRat\Middleware\Extractor\PropertyGetterExtractor' => [],
             // InputFilter
             'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterClass' => [],

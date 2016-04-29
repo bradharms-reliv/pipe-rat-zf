@@ -4,7 +4,7 @@ return [
     'Reliv\\PipeRat' => require __DIR__ . '/../../pipe-rat/config/config.php',
     'service_manager' => [
         'config_factories' => [
-            
+
             /* Extractors */
             'Reliv\PipeRat\Extractor\CollectionPropertyGetterExtractor' => [],
             'Reliv\PipeRat\Extractor\PropertyGetterExtractor'=> [],
@@ -13,6 +13,7 @@ return [
             'Reliv\PipeRat\ResourceController\DoctrineResourceController' => [
                 'arguments' => [
                     'Doctrine\ORM\EntityManager',
+                    'Reliv\PipeRat\Hydrator\PropertySetterHydrator'
                 ],
             ],
 
@@ -27,7 +28,7 @@ return [
                 ],
             ],
             // Extractor
-            'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyExtractor' => [],
+            'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyGetterExtractor' => [],
             'Reliv\PipeRat\Middleware\Extractor\PropertyGetterExtractor' => [],
             // InputFilter
             'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterClass' => [],

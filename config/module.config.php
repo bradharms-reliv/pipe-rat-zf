@@ -40,9 +40,11 @@ return [
             ],
             // Request Formatter
             'Reliv\PipeRat\Middleware\RequestFormat\JsonRequestFormat' => [],
+            'Reliv\PipeRat\Middleware\RequestFormat\ParamRequestFormat' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\LimitFilterParamRequestFormat' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\OrderByFilterParamRequestFormat' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\PropertyFilterParamRequestFormat' => [],
+            'Reliv\PipeRat\Middleware\RequestFormat\SkipFilterParamRequestFormat' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\WhereFilterParamRequestFormat' => [],
             // Response Formatter
             'Reliv\PipeRat\Middleware\ResponseFormat\JsonResponseFormat' => [],

@@ -27,6 +27,10 @@ return [
                     'RcmUser\Service\RcmUserService',
                 ],
             ],
+            /* Error Middleware */
+            'Reliv\PipeRat\Middleware\Error\TriggerErrorHandler' => [],
+            'Reliv\PipeRat\Middleware\Error\NonThrowingErrorHandler' => [],
+            
             // Extractor
             'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyGetterExtractor' => [],
             'Reliv\PipeRat\Middleware\Extractor\PropertyGetterExtractor' => [],
@@ -50,42 +54,31 @@ return [
             'Reliv\PipeRat\Middleware\ResponseFormat\JsonResponseFormat' => [],
             'Reliv\PipeRat\Middleware\ResponseFormat\XmlResponseFormat' => [],
             // Main
-            'Reliv\PipeRat\Middleware\MainMiddleware' => [
-                'class' => 'Reliv\PipeRat\Middleware\MainMiddleware',
+            'Reliv\PipeRat\Middleware\BasicConfigMiddleware' => [
+                'class' => 'Reliv\PipeRat\Middleware\OperationMiddleware',
                 'arguments' => [
-                    'Reliv\PipeRat\Provider\RouteModelProvider',
-                    'Reliv\PipeRat\Provider\ErrorModelProvider',
-                    'Reliv\PipeRat\Provider\ResourceModelProvider',
+                    'Reliv\PipeRat\Provider\BasicConfigRouteMiddlewareProvider',
+                    'Reliv\PipeRat\Provider\BasicConfigErrorMiddlewareProvider',
+                    'Reliv\PipeRat\Provider\BasicConfigMiddlewareProvider',
                 ],
             ],
             'Reliv\PipeRat\Middleware\Router' => [
                 'class' => 'Reliv\PipeRat\Middleware\Router\CurlyBraceVarRouter',
-                'arguments' => [
-                    'Reliv\PipeRat\Provider\RouteModelProvider',
-                    'Reliv\PipeRat\Provider\ErrorModelProvider',
-                    'Reliv\PipeRat\Provider\ResourceModelProvider',
-                ],
             ],
-            'Reliv\PipeRat\Middleware\Error\TriggerErrorHandler' => [],
-            'Reliv\PipeRat\Middleware\Error\NonThrowingErrorHandler' => [],
-
-            /* Model Providers */
-            'Reliv\PipeRat\Provider\ErrorModelProvider' => [
-                'class' => 'Reliv\PipeRat\Provider\ConfigErrorModelProvider',
+            /* Middleware Providers */
+            'Reliv\PipeRat\Provider\BasicConfigErrorMiddlewareProvider' => [
                 'arguments' => [
                     'Config',
                     'ServiceManager',
                 ],
             ],
-            'Reliv\PipeRat\Provider\ResourceModelProvider' => [
-                'class' => 'Reliv\PipeRat\Provider\ConfigResourceModelProvider',
+            'Reliv\PipeRat\Provider\BasicConfigMiddlewareProvider' => [
                 'arguments' => [
                     'Config',
                     'ServiceManager',
                 ],
             ],
-            'Reliv\PipeRat\Provider\RouteModelProvider' => [
-                'class' => 'Reliv\PipeRat\Provider\ConfigRouteModelProvider',
+            'Reliv\PipeRat\Provider\BasicConfigRouteMiddlewareProvider' => [
                 'arguments' => [
                     'Config',
                     'ServiceManager',

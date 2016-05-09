@@ -59,7 +59,7 @@ return [
                 ],
             ],
             'Reliv\PipeRat\Middleware\Router' => [
-                'class' => 'Reliv\PipeRat\Middleware\Router\CurlyBraceVarRouterOld',
+                'class' => 'Reliv\PipeRat\Middleware\Router\CurlyBraceVarRouter',
                 'arguments' => [
                     'Reliv\PipeRat\Provider\RouteModelProvider',
                     'Reliv\PipeRat\Provider\ErrorModelProvider',

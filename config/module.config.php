@@ -27,13 +27,14 @@ return [
                     'RcmUser\Service\RcmUserService',
                 ],
             ],
-            /* Error Middleware */
+            // Error Middleware
             'Reliv\PipeRat\Middleware\Error\TriggerErrorHandler' => [],
             'Reliv\PipeRat\Middleware\Error\NonThrowingErrorHandler' => [],
             
             // Extractor
             'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyGetterExtractor' => [],
             'Reliv\PipeRat\Middleware\Extractor\PropertyGetterExtractor' => [],
+
             // InputFilter
             'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterClass' => [],
             'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterConfig' => [],
@@ -42,23 +43,24 @@ return [
                     'ServiceManager',
                 ],
             ],
+
             // Request Formatter
             'Reliv\PipeRat\Middleware\RequestFormat\UrlEncodedCombinedFilter\Fields'=>[],
             'Reliv\PipeRat\Middleware\RequestFormat\UrlEncodedCombinedFilter\Limit'=>[],
             'Reliv\PipeRat\Middleware\RequestFormat\UrlEncodedCombinedFilter\Order'=>[],
             'Reliv\PipeRat\Middleware\RequestFormat\UrlEncodedCombinedFilter\Skip'=>[],
             'Reliv\PipeRat\Middleware\RequestFormat\UrlEncodedCombinedFilter\Where'=>[],
-//            'Reliv\PipeRat\Middleware\RequestFormat\JsonRequestFormat' => [],
-//            'Reliv\PipeRat\Middleware\RequestFormat\ParamRequestFormat' => [],
-//            'Reliv\PipeRat\Middleware\RequestFormat\LimitFilterParamRequestFormat' => [],
-//            'Reliv\PipeRat\Middleware\RequestFormat\OrderByFilterParamRequestFormat' => [],
-//            'Reliv\PipeRat\Middleware\RequestFormat\PropertyFilterParamRequestFormat' => [],
-//            'Reliv\PipeRat\Middleware\RequestFormat\SkipFilterParamRequestFormat' => [],
-//            'Reliv\PipeRat\Middleware\RequestFormat\WhereFilterParamRequestFormat' => [],
+            'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Limit' => [],
+            'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Order' => [],
+            'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Properties' => [],
+            'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Skip' => [],
+            'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Where' => [],
+            'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsRequestFormat' => [],
 
             // Response Formatter
             'Reliv\PipeRat\Middleware\ResponseFormat\JsonResponseFormat' => [],
             'Reliv\PipeRat\Middleware\ResponseFormat\XmlResponseFormat' => [],
+
             // Main
             'Reliv\PipeRat\Middleware\BasicConfigMiddleware' => [
                 'class' => 'Reliv\PipeRat\Middleware\OperationMiddleware',

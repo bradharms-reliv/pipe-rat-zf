@@ -58,6 +58,22 @@ return [
             'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsRequestFormat' => [],
 
             // Response Formatter
+            'Reliv\PipeRat\Middleware\ResponseFormat\FileDataResponseFormat' => [
+                'arguments' => [
+                    'Reliv\PipeRat\Middleware\Extractor\PropertyGetterExtractor',
+                ],
+            ],
+            'Reliv\PipeRat\Middleware\ResponseFormat\FileResponseFormat' => [],
+            'Reliv\PipeRat\Middleware\ResponseFormat\HtmlListResponseFormat' => [
+                'arguments' => [
+                    'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyGetterExtractor',
+                ],
+            ],
+            'Reliv\PipeRat\Middleware\ResponseFormat\HtmlResponseFormat' => [
+                'arguments' => [
+                    'Reliv\PipeRat\Middleware\Extractor\PropertyGetterExtractor',
+                ],
+            ],
             'Reliv\PipeRat\Middleware\ResponseFormat\JsonResponseFormat' => [],
             'Reliv\PipeRat\Middleware\ResponseFormat\XmlResponseFormat' => [],
 

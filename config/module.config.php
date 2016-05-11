@@ -10,7 +10,7 @@ return [
             'Reliv\PipeRat\Extractor\PropertyGetterExtractor'=> [],
 
             /* Resource Controller */
-            'Reliv\PipeRat\ResourceController\DoctrineResourceController' => [
+            'Reliv\PipeRat\Middleware\ResourceController\DoctrineResourceController' => [
                 'arguments' => [
                     'Doctrine\ORM\EntityManager',
                     'Reliv\PipeRat\Hydrator\PropertySetterHydrator'
@@ -53,9 +53,9 @@ return [
             'Reliv\PipeRat\Middleware\RequestFormat\UrlEncodedCombinedFilter\Order'=>[],
             'Reliv\PipeRat\Middleware\RequestFormat\UrlEncodedCombinedFilter\Skip'=>[],
             'Reliv\PipeRat\Middleware\RequestFormat\UrlEncodedCombinedFilter\Where'=>[],
+            'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Fields' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Limit' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Order' => [],
-            'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Properties' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Skip' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsFilter\Where' => [],
             'Reliv\PipeRat\Middleware\RequestFormat\JsonParamsRequestFormat' => [],

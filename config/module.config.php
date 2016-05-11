@@ -35,6 +35,9 @@ return [
             'Reliv\PipeRat\Middleware\Extractor\CollectionPropertyGetterExtractor' => [],
             'Reliv\PipeRat\Middleware\Extractor\PropertyGetterExtractor' => [],
 
+            // Header
+            'Reliv\PipeRat\Middleware\Header\AddResponseHeaders' => [],
+
             // InputFilter
             'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterClass' => [],
             'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterConfig' => [],

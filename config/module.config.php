@@ -9,10 +9,17 @@ return [
             'Reliv\PipeRat\Extractor\CollectionPropertyGetterExtractor' => [],
             'Reliv\PipeRat\Extractor\PropertyGetterExtractor'=> [],
 
-            /* Resource Controller */
+            /* Resource Controllers */
             'Reliv\PipeRat\Middleware\ResourceController\DoctrineResourceController' => [
                 'arguments' => [
                     'Doctrine\ORM\EntityManager',
+                    'Reliv\PipeRat\Hydrator\PropertySetterHydrator'
+                ],
+            ],
+
+            'Reliv\PipeRat\Middleware\ResourceController\RepositoryResourceController' => [
+                'arguments' => [
+                    'ServiceManager',
                     'Reliv\PipeRat\Hydrator\PropertySetterHydrator'
                 ],
             ],

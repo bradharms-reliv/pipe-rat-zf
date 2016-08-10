@@ -44,6 +44,7 @@ return [
 
             // Header
             'Reliv\PipeRat\Middleware\Header\AddResponseHeaders' => [],
+            'Reliv\PipeRat\Middleware\Header\Expires' => [],
 
             // InputFilter
             'Reliv\PipeRat\Middleware\InputFilter\ZfInputFilterClass' => [],

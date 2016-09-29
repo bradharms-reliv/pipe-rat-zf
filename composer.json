@@ -27,7 +27,7 @@
   "require": {
     "php": ">=5.5",
     "reliv/pipe-rat": "0.*",
-    "reliv/zf-config-factories": "3.*"
+    "reliv/zf-config-factories": "3.* || 4.*"
   },
   "require-dev": {
   },
